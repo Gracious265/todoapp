@@ -1,0 +1,26 @@
+h2.head{font-family: Roboto;
+    font-weight: lighter;
+    padding-left: 20px;
+    font-size: 20px;
+    color:rgb(56, 146, 146);
+}
+
+
+li.list-group{
+    padding-left: 20px;
+}
+
+
+
+input.placeholer{
+    text-emphasis: none;
+    text-decoration: aquamarine;
+    outline: none;
+
+
+}
+
+input .form-control{
+    outline: none
+    ;
+}

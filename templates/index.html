@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<html>
+
+
+<!--app title-->
+
+<nav class="navbar navbar-dark bg-info shadow-sm p-3 mb-5">
+      <a class="navbar-brand text-monospace mx-1" href="#" >TO DO APP</a>
+</nav>
+
+  <!--for form/add item input-->
+  <div class="row mt-4">
+    <div class="col">
+      <h2 class="head">Add Item </h2>
+      <form action="add_todo" method="post" class="form-inline center ">
+      <input type="text" name="content" class="form-control mb-2 mr-sm-2 mx-3 "   placeholder="type here...">
+      <button type="submit" class="btn btn-primary mb-2 bg-info font-italic text-monospace mx-3 ">Submit</button>
+      </form>
+    </div>
+
+  </div>
+
+
+<!--list-->
+
+<div class="row mt-8">
+  <div class="col">
+    <ul class="list-group shadow p-3 mb-5 bg-white rounded" >
+      {%for todo_item in todo_items %}
+      <li class="list-group-item bg-info text-light">{{todo_item.text }}
+
+        <!--delete button-->
+
+        <div class="float-right">
+          <form action="delete_todo/{{todo_item.id}}/" method="post">
+        <button type="submit" class="btn-danger btn-sm">Delete</button>
+           </form>
+        </div>
+
+      </li>
+
+      {% endfor %}
+
+    </ul>
+
+
+  </div>
+
+
+</div>
+
+
+
+</html>
+
+{% endblock %}
+
+
+
+
+
